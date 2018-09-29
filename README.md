@@ -9,8 +9,3 @@ sudo npm install -g typescript tslint tslint-webpack-plugin
 ```bash
 npm run build
 ```
-
-3. Run test
-```bash
-npm start
-```
