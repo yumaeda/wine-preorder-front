@@ -36,6 +36,12 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_name']))
             padding: 15px;
         }
 
+        .add-to-cart-img
+        {
+            width: 15px;
+            height:15px;
+        }
+
         @media only screen and (max-device-width: 480px)
         {
             header, div.contents, footer
@@ -127,6 +133,5 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_name']))
 </html>
 <script type="text/javascript" src="./app.js"></script>
 <script type="text/javascript" src="./controller/preorder.js?q=1"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./dist/index.min.js"></script>
 
