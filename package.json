@@ -1,5 +1,5 @@
 {
-  "name": "preorder",
+  "name": "wine-preorder-front",
   "version": "1.0.0",
   "description": "TypeScript: Add the specified product to cart.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yumaeda/preorder.git"
+    "url": "git+https://github.com/yumaeda/wine-preorder-front.git"
   },
   "keywords": [
     "preorder"
@@ -17,9 +17,9 @@
   "author": "Yukitaka Maeda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yumaeda/preorder/issues"
+    "url": "https://github.com/yumaeda/wine-preorder-front/issues"
   },
-  "homepage": "https://github.com/yumaeda/preorder#readme",
+  "homepage": "https://github.com/yumaeda/wine-preorder-front#readme",
   "devDependencies": {
     "ts-loader": "^4.5.0",
     "tslint": "^5.11.0",
