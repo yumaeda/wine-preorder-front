@@ -1,31 +1,35 @@
 app.controller('preorderCtrl', function($scope, $http, API_URL)
 {
-    $scope.dtCur        = new Date();
-    $scope.dtWeekBefore = new Date();
-    $scope.cLoadedType  = 0;
-    $scope.rgobjWine    = [];
-    $scope.strColumn    = 'vintage';
-    $scope.displayAttr  = 'block';
+    $scope.dtCur          = new Date();
+    $scope.dtWeekBefore   = new Date();
+    $scope.cLoadedType    = 0;
+    $scope.rgobjWine      = [];
+    $scope.strColumn      = 'vintage';
+    $scope.displayAttr    = 'block';
 
     $scope.dtWeekBefore.setDate($scope.dtWeekBefore.getDate() - 7);
 
-    $http({
+    $http(
+    {
         method: 'GET',
         url: API_URL + 'preorder-wines/creation/date'
     })
-    .then(function(response) {
-        $scope.dtTableCreation = new Date(response.data.date.create_time.replace(/-/g, '/'));
+    .then(function(response)
+    {
+        $scope.dtTableCreation = new Date(response.data.date.CREATE_TIME.replace(/-/g, '/'));
         $scope.fLinkEnabled    = ($scope.dtWeekBefore <= $scope.dtTableCreation);
     },
-    function(error) {
-    });
+    function(error){});
 
-    function loadPreorderWines(strType, intSort) {
-        $http({
+    function loadPreorderWines(strType, intSort)
+    {
+        $http(
+        {
             method: 'GET',
             url: API_URL + 'preorder-wines/' + strType
         })
-        .then(function(response) {
+        .then(function(response)
+        {
             $scope.rgobjWine.push({
                 sortOrder: intSort,
                 type: strType,
@@ -33,20 +37,21 @@ app.controller('preorderCtrl', function($scope, $http, API_URL)
             });
 
             $scope.cLoadedType += 1;
-            if ($scope.cLoadedType == 11) {
+            if ($scope.cLoadedType == 11)
+            {
                 $scope.displayAttr = 'none';
             }
         },
-        function(error) {
-        });
+        function(error){});
     }
 
-    $scope.setSortOrder = function(strColumn) {
+    $scope.setSortOrder = function(strColumn)
+    {
         $scope.strSortColumn = strColumn;
     };
 
-    $scope.returnUrl  = '//anyway-grapes.jp/preorder/';
-    $scope.intCurYear = $scope.dtCur.getFullYear();
+    $scope.returnUrl    = '//anyway-grapes.jp/preorder/';
+    $scope.intCurYear   = $scope.dtCur.getFullYear();
 
     loadPreorderWines('Bourgogne Rouge', 1);
     loadPreorderWines('Bourgogne Blanc', 2);
